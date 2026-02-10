@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block bodyblock %}
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <br><br>
+
+                <h3 class="display-8">Gender Classification</h3>
+                <p>Upload an Image (.jpg, .jpeg, .png), Our Model will detect face and Classify image according to the gender</p>
+                
+                <form action="#" method="POST" enctype="multipart/form-data">
+                <div class="inpur-group">   
+                    <input type="file" class="form-control" name="image-name" required>
+                    <br>
+                    <input type="submit" value="Upload & Predict" class="btn btn-outline-primary">
+                </div>
+                </form>
+
+            </div>
+            <div class="col-8">
+
+                {% if fileupload %}
+
+                    <br><br>
+                    <h3 class="display-8">Predicted Image</h3>
+                    <img src="/static/predict/Prediction_Image.jpg" alt="" class="image-fluid" width="250">
+
+                {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+
+{% endblock bodyblock %}
